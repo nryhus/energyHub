@@ -1,0 +1,38 @@
+name: energy-hub-app
+
+services:
+  mongo:
+    image: mongo:7.0.12
+  # ports:
+  #     - "27027:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=${MONGO_INITDB_DATABASE}
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+      - MONGO_USER=${MONGO_USER}
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
+    volumes:
+      - mongo_data:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+    networks:
+      energy-hub-app
+    restart: unless-stopped
+  back:
+    build:
+      context: ./back
+      target: prod
+    volumes:
+      - ./back:/app
+      - /app/node_modules
+    networks:
+      - energy-hub-app
+    depends_on:
+      - mongo
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
+
+networks:
+  energy-hub-app:
+    driver: bridge
