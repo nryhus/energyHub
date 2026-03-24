@@ -60,36 +60,36 @@ const Navbar = () => {
                 </div>
             </div>
             <Dropdown isOpen={!!activeMenu} onClose={() => setActiveMenu(null)}>
-                {activeMenu === "available" && (
-                    <div className={css.MenuContent}>
-                        <div>
-                            <p>АВТО В НАЯВНОСТІ</p>
-                            <p>МАШИНИ З КИТАЮ</p>
-                            <p>МАШИНИ З ЄВРОПИ</p>
-                            <p>МАШИНИ З США</p>
-                        </div>
-
-                        <Link href={"/catalog?type=inStorage"} className={css.CatalogBtn}>
-                            Дивитись весь каталог →
-                        </Link>
+            {activeMenu === "available" && (
+                <div className={css.MenuContent}>
+                    <div>
+                        <p>АВТО В НАЯВНОСТІ</p>
+                        <p onClick={() => setActiveMenu(null)}>МАШИНИ З КИТАЮ</p>
+                        <p onClick={() => setActiveMenu(null)}>МАШИНИ З ЄВРОПИ</p>
+                        <p onClick={() => setActiveMenu(null)}>МАШИНИ З США</p>
                     </div>
-                )}
 
-                {activeMenu === "order" && (
-                    <div className={css.MenuContent}>
-                        <div>
-                            <p>ПІД ЗАМОВЛЕННЯ</p>
-                            <p>МАШИНИ З КИТАЮ</p>
-                            <p>МАШИНИ З ЄВРОПИ</p>
-                            <p>МАШИНИ З США</p>
-                        </div>
+                    <Link href={"/catalog?type=inStorage"} onClick={() => setActiveMenu(null)} className={css.CatalogBtn}>
+                        Дивитись весь каталог →
+                    </Link>
+                </div>
+            )}
 
-                        <Link href={"/catalog?type=toOrder"} className={css.CatalogBtn}>
-                            Дивитись весь каталог →
-                        </Link>
+            {activeMenu === "order" && (
+                <div className={css.MenuContent}>
+                    <div>
+                        <p>ПІД ЗАМОВЛЕННЯ</p>
+                        <p onClick={() => setActiveMenu(null)}>МАШИНИ З КИТАЮ</p>
+                        <p onClick={() => setActiveMenu(null)}>МАШИНИ З ЄВРОПИ</p>
+                        <p onClick={() => setActiveMenu(null)}>МАШИНИ З США</p>
                     </div>
-                )}
-            </Dropdown>
+
+                    <Link href={"/catalog?type=toOrder"} onClick={() => setActiveMenu(null)} className={css.CatalogBtn}>
+                        Дивитись весь каталог →
+                    </Link>
+                </div>
+            )}
+        </Dropdown>
         </div>
     );
 };

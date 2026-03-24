@@ -75,10 +75,12 @@
 
 .Dropdown {
     position: absolute;
-    top: 100%;
+    top: 72px;
     left: 0;
     width: 100%;
-    z-index: 20;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
     animation: fadeIn 0.2s ease;
 }
 
