@@ -20,7 +20,7 @@
     gap: 32px;
 }
 
-.NavbarLinks button {
+.NavbarLink {
     background: none;
     border: none;
     cursor: pointer;
@@ -32,16 +32,7 @@
     transition: color 0.2s ease;
 }
 
-.NavbarLinks a {
-    font-size: medium;
-    font-family: "Sans Serif Collection", sans-serif;
-    font-weight: normal;
-    text-decoration: none;
-    color: #09090B;
-    transition: color 0.2s ease;
-}
-
-.NavbarLinks a:hover, button:hover {
+.NavbarLinks:hover {
     color: #6b7280;
 }
 
@@ -74,16 +65,32 @@
     background: #111827;
 }
 
+.Overlay {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
 .Dropdown {
     position: absolute;
-    top: 72px;
+    top: 100%;
     left: 0;
     width: 100%;
+    z-index: 20;
+    animation: fadeIn 0.2s ease;
+}
 
-    display: flex;
-    justify-content: center;
-
-    z-index: 100;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .MenuContent {
