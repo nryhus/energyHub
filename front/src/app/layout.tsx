@@ -1,4 +1,5 @@
 import {FC, PropsWithChildren} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {Navbar} from "@/app/components/Navbar/Navbar";
 
