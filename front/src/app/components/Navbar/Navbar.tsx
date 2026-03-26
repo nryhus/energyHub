@@ -4,6 +4,7 @@ import Link from "next/link";
 import css from "./Navbar.module.css";
 import {useState} from "react";
 import {Dropdown} from "./Dropdown"
+import {CategoryEnum} from "@/enums/carCategory.enum";
 
 type MenuType = "available" | "order" | null;
 
@@ -69,7 +70,7 @@ const Navbar = () => {
                         <p onClick={() => setActiveMenu(null)}>МАШИНИ З США</p>
                     </div>
 
-                    <Link href={"/catalog?type=inStorage"} onClick={() => setActiveMenu(null)} className={css.CatalogBtn}>
+                    <Link href={`/catalog?type=${CategoryEnum.inStorage}`} onClick={() => setActiveMenu(null)} className={css.CatalogBtn}>
                         Дивитись весь каталог →
                     </Link>
                 </div>
@@ -84,7 +85,7 @@ const Navbar = () => {
                         <p onClick={() => setActiveMenu(null)}>МАШИНИ З США</p>
                     </div>
 
-                    <Link href={"/catalog?type=toOrder"} onClick={() => setActiveMenu(null)} className={css.CatalogBtn}>
+                    <Link href={`/catalog?type=${CategoryEnum.toOrder}`} onClick={() => setActiveMenu(null)} className={css.CatalogBtn}>
                         Дивитись весь каталог →
                     </Link>
                 </div>
