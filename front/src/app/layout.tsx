@@ -1,14 +1,14 @@
 import {FC, PropsWithChildren} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {Navbar} from "@/app/components/Navbar/Navbar";
+import {Header} from "@/app/components/Header/Header";
 
 const Layout: FC<PropsWithChildren> = ({children}) => {
     return (
         <html lang="en">
             <body>
                 <div>
-                    <Navbar/>
+                    <Header/>
                     {children}
                 </div>
             </body>

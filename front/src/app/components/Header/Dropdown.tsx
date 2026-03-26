@@ -2,7 +2,7 @@
 
 import { FC, PropsWithChildren, ReactNode, useEffect, useRef } from "react";
 
-import css from "./Navbar.module.css";
+import css from "./Header.module.css";
 
 interface IProps extends PropsWithChildren {
     isOpen: boolean;
