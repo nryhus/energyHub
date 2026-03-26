@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import { cars } from "@/data/cars";
 import Image from "next/image";
 
-const Merchandise = () => {
+const CarPage = () => {
     const params = useParams<{ id: string }>();
 
     const car = cars.find(car => car.id === params.id);
@@ -32,4 +32,4 @@ const Merchandise = () => {
     );
 };
 
-export default Merchandise;
+export default CarPage;

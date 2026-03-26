@@ -10,7 +10,7 @@ interface IProps {
 
 const CarCard: FC<IProps> = ({car}) => {
     return (
-        <Link href={`/catalog/${car.id}`}>
+        <Link href={`/cars-catalog/${car.id}`}>
             <div className="p-6" style={{backgroundColor: "cyan"}}>
                 <h1 className="text-3xl font-bold">{car.label}</h1>
                 <Image src={car.image_url} alt={car.label} width={50} height={40} loading="eager"/>

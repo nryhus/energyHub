@@ -1,4 +1,4 @@
 export enum CategoryEnum {
-    inStorage = "inStorage",
-    toOrder = "toOrder"
+    inStorage = "in-storage",
+    toOrder = "to-order"
 }

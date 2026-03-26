@@ -2,10 +2,10 @@
 
 import { useSearchParams } from "next/navigation";
 import { cars } from "@/data/cars";
-import {CarCard} from "@/app/catalog/components/CarCard/CarCard";
+import {CarCard} from "@/app/cars-catalog/components/CarCard/CarCard";
 import {CategoryEnum} from "@/enums/carCategory.enum";
 
-const Catalog = () => {
+const CarsCatalogPage = () => {
     const searchParams = useSearchParams();
 
     const type = searchParams.get("type") as CategoryEnum || null;
@@ -31,4 +31,4 @@ const Catalog = () => {
     );
 }
 
-export default Catalog;
+export default CarsCatalogPage;

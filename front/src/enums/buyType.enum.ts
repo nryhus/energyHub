@@ -1,4 +1,4 @@
 export enum BuyTypeEnum {
-    auction = "Auction",
-    notAuction = "NotAuction",
+    auction = "auction",
+    notAuction = "not-auction",
 }

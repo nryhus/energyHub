@@ -29,9 +29,9 @@ const Navbar = () => {
                         Авто під замовлення
                     </button>
 
-                    <Link href={"/"} className={css.NavbarLink}>Магазин Автозапчастин</Link>
+                    <Link href={"/merch-catalog"} className={css.NavbarLink}>Магазин Автозапчастин</Link>
                     <Link href={"/"} className={css.NavbarLink}>Кредитування</Link>
-                    <Link href={"/"} className={css.NavbarLink}>Для дилерів</Link>
+                    <Link href={"/partners"} className={css.NavbarLink}>Для дилерів</Link>
 
                     <button className={css.IconBtn}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -70,7 +70,7 @@ const Navbar = () => {
                         <p onClick={() => setActiveMenu(null)}>МАШИНИ З США</p>
                     </div>
 
-                    <Link href={`/catalog?type=${CategoryEnum.inStorage}`} onClick={() => setActiveMenu(null)} className={css.CatalogBtn}>
+                    <Link href={`/cars-catalog?type=${CategoryEnum.inStorage}`} onClick={() => setActiveMenu(null)} className={css.CatalogBtn}>
                         Дивитись весь каталог →
                     </Link>
                 </div>
@@ -85,7 +85,7 @@ const Navbar = () => {
                         <p onClick={() => setActiveMenu(null)}>МАШИНИ З США</p>
                     </div>
 
-                    <Link href={`/catalog?type=${CategoryEnum.toOrder}`} onClick={() => setActiveMenu(null)} className={css.CatalogBtn}>
+                    <Link href={`/cars-catalog?type=${CategoryEnum.toOrder}`} onClick={() => setActiveMenu(null)} className={css.CatalogBtn}>
                         Дивитись весь каталог →
                     </Link>
                 </div>
