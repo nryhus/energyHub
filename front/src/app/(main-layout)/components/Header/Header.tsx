@@ -20,15 +20,15 @@ const Header = () => {
         <div className={css.Wrapper}>
             <Navbar expand="md" className="justify-content-between">
                 <Container>
-                    <Navbar.Brand href={"./"}>Energy Hub Logo</Navbar.Brand>
+                    <Navbar.Brand href={"/"}>Energy Hub Logo</Navbar.Brand>
 
                     <Nav className="ms-auto align-items-center gap-3">
 
                         <button className={css.NavbarLink} onClick={() => toggleMenu("available")}>
                             Авто в наявності
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round"
+                                 fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+                                 strokeLinejoin="round"
                                  className="lucide lucide-chevron-down-icon lucide-chevron-down">
                                 <path d="m6 9 6 6 6-6"/>
                             </svg>
@@ -36,14 +36,14 @@ const Header = () => {
                         <button className={css.NavbarLink} onClick={() => toggleMenu("order")}>
                             Авто під замовлення
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round"
+                                 fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+                                 strokeLinejoin="round"
                                  className="lucide lucide-chevron-down-icon lucide-chevron-down">
                                 <path d="m6 9 6 6 6-6"/>
                             </svg>
                         </button>
 
-                        <Link href={"/merch-catalog"} className={css.NavbarLink}>Магазин Автозапчастин</Link>
+                        <Link href={"/merch"} className={css.NavbarLink}>Магазин Автозапчастин</Link>
                         <Link href={"/"} className={css.NavbarLink}>Кредитування</Link>
                         <Link href={"/partners"} className={css.NavbarLink}>Для дилерів</Link>
 
@@ -87,7 +87,7 @@ const Header = () => {
                             <p onClick={() => setActiveMenu(null)}>МАШИНИ З США</p>
                         </div>
 
-                        <Link href={`/cars-catalog?type=${CategoryEnum.inStorage}`}
+                        <Link href={`/cars?type=${CategoryEnum.inStorage}`}
                               onClick={() => setActiveMenu(null)} className={css.CatalogBtn}>
                             Дивитись весь каталог →
                         </Link>
@@ -103,7 +103,7 @@ const Header = () => {
                             <p onClick={() => setActiveMenu(null)}>МАШИНИ З США</p>
                         </div>
 
-                        <Link href={`/cars-catalog?type=${CategoryEnum.toOrder}`}
+                        <Link href={`/cars?type=${CategoryEnum.toOrder}`}
                               onClick={() => setActiveMenu(null)} className={css.CatalogBtn}>
                             Дивитись весь каталог →
                         </Link>

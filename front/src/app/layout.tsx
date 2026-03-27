@@ -1,19 +1,11 @@
-import {FC, PropsWithChildren} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {Header} from "@/app/components/Header/Header";
-
-const Layout: FC<PropsWithChildren> = ({children}) => {
+export default function RootLayout({children}: {
+    children: React.ReactNode
+}) {
     return (
         <html lang="en">
-            <body>
-                <div>
-                    <Header/>
-                    {children}
-                </div>
-            </body>
+            <body>{children}</body>
         </html>
-    );
-};
-
-export default Layout;
+    )
+}

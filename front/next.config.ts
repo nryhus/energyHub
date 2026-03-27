@@ -6,6 +6,13 @@ const nextConfig: NextConfig = {
             protocol: "https",
             hostname: "*",
         }]
+    },
+    async redirects() {
+        return [{
+            source: "/",
+            destination: "/home",
+            permanent: true
+        }]
     }
 };
 

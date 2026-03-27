@@ -97,6 +97,6 @@ export const cars: ICar[] = [
         type_of_car: "Electric SUV",
         carCategory: CategoryEnum.inStorage,
         type_of_buy: BuyTypeEnum.notAuction,
-        image_url: "https://elcars.ua/salon/wp-content/uploads/sites/6/2025/04/1400x1050_autohomecar__ChxoHme9lLmAavdvACMRQ8QXqg0636-798x466.jpg",
+        image_url: "https://akbset.com/_pic_cars/741494054826.jpg",
     },
 ];

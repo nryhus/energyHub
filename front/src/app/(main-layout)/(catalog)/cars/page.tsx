@@ -1,11 +1,12 @@
 'use client';
 
-import { useSearchParams } from "next/navigation";
-import { cars } from "@/data/cars";
-import {CarCard} from "@/app/cars-catalog/components/CarCard/CarCard";
+import {useSearchParams} from "next/navigation";
+import {cars} from "@/data/cars";
+import {CarCard} from "@/app/(main-layout)/(catalog)/cars/components/CarCard/CarCard";
 import {CategoryEnum} from "@/enums/carCategory.enum";
+import {Col, Row} from "react-bootstrap";
 
-const CarsCatalogPage = () => {
+const CarsPage = () => {
     const searchParams = useSearchParams();
 
     const type = searchParams.get("type") as CategoryEnum || null;
@@ -22,13 +23,13 @@ const CarsCatalogPage = () => {
                 Catalog ({type || "all"})
             </h1>
 
-            <div className="grid grid-cols-3 gap-6">
+            <Row>
                 {filteredCars.map((car) => (
-                    <CarCard key={car.id} car={car} />
+                    <CarCard car={car} key={car.id}/>
                 ))}
-            </div>
+            </Row>
         </div>
     );
 }
 
-export default CarsCatalogPage;
+export default CarsPage;
