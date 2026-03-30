@@ -51,7 +51,6 @@ const CarCard: FC<IProps> = ({car}) => {
                             </div>
                         </div>
 
-                        {/* button */}
                         <div className={css.ButtonWrapper}>
                             <button className={css.Button}>
                                 ДЕТАЛЬНІШЕ →

@@ -4,7 +4,8 @@ import {useSearchParams} from "next/navigation";
 import {cars} from "@/data/cars";
 import {CarCard} from "@/app/(main-layout)/(catalog)/cars/components/CarCard/CarCard";
 import {CategoryEnum} from "@/enums/carCategory.enum";
-import {Col, Row} from "react-bootstrap";
+import {Breadcrumbs} from "@/app/(main-layout)/components/Breadcrumbs/Breadcrumbs";
+import {Row} from "react-bootstrap";
 
 const CarsPage = () => {
     const searchParams = useSearchParams();
@@ -17,10 +18,30 @@ const CarsPage = () => {
         return car.carCategory === type;
     });
 
+    const getLabel = () => {
+        switch (type) {
+            case CategoryEnum.inStorage:
+                return "Авто в наявності";
+            case CategoryEnum.toOrder:
+                return "Авто під замовлення";
+            default:
+                return "Каталог авто";
+        }
+    };
+
+    const label = getLabel();
+
     return (
         <div className="p-6">
+            <Breadcrumbs
+                breadcrumbs={[
+                    {label: "Головна", href: "/"},
+                    {label: label, href: "/cars", active: true},
+                ]}
+            />
+
             <h1 className="text-2xl font-bold mb-6">
-                Catalog ({type || "all"})
+                {label}
             </h1>
 
             <Row>
