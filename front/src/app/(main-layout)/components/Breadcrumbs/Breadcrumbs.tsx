@@ -15,7 +15,7 @@ interface IProps {
 
 const Breadcrumbs: FC<IProps> = ({breadcrumbs}) => {
     return (
-        <Container className={css.Breadcrumbs}>
+        <div className={css.Breadcrumbs}>
             {breadcrumbs.map((crumb, index) => (
                 <div key={index} className={css.Item}>
 
@@ -38,7 +38,7 @@ const Breadcrumbs: FC<IProps> = ({breadcrumbs}) => {
 
                 </div>
             ))}
-        </Container>
+        </div>
     );
 };
 
