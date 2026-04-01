@@ -1,4 +1,4 @@
-import {IMerch} from "@/interfaces/merch.interface";
+import {IMerch} from "@/interfaces";
 import {FC} from "react";
 import {Card, Col} from "react-bootstrap";
 import Link from "next/link";
@@ -12,7 +12,7 @@ interface IProps {
 const MerchCard: FC<IProps> = ({merch}) => {
     return (
         <Col md={4}>
-            <Link href={`/merch/${merch.id}`} className={css.Link}>
+            <Link href={`/front/src/app/(main-layout)/merch/${merch.id}`} className={css.Link}>
                 <Card className={css.Card}>
                     <div className={css.ImageWrapper}>
                         <Image src={merch.image_url} alt={merch.label} className={css.Image} fill/>

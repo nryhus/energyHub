@@ -1,11 +1,9 @@
 'use client';
 
 import {useSearchParams} from "next/navigation";
-import {cars} from "@/data/cars";
-import {CarCard} from "@/app/(main-layout)/(catalog)/cars/components/CarCard/CarCard";
-import {CategoryEnum} from "@/enums/carCategory.enum";
-import {Breadcrumbs} from "@/app/(main-layout)/components/Breadcrumbs/Breadcrumbs";
-import {Row} from "react-bootstrap";
+import {cars} from "@/data";
+import {CategoryEnum} from "@/enums";
+import {Breadcrumbs, CarCard, CardList} from "@/app/(main-layout)/ui";
 
 const CarsPage = () => {
     const searchParams = useSearchParams();
@@ -44,11 +42,9 @@ const CarsPage = () => {
                 {label}
             </h1>
 
-            <Row>
-                {filteredCars.map((car) => (
-                    <CarCard car={car} key={car.id}/>
-                ))}
-            </Row>
+            <CardList objects={filteredCars}>
+                {(car) => <CarCard car={car} key={car.id}/>}
+            </CardList>
         </div>
     );
 }

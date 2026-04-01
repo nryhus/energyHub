@@ -1,9 +1,8 @@
 'use client';
 
-import {Breadcrumbs} from "@/app/(main-layout)/components/Breadcrumbs/Breadcrumbs";
+import {Breadcrumbs, MerchCard} from "@/app/(main-layout)/ui";
 import {Row} from "react-bootstrap";
 import {merch} from "@/data/merch";
-import {MerchCard} from "@/app/(main-layout)/(catalog)/merch/components/MerchCard/MerchCard";
 
 const MerchPage = () => {
     const label = "Магазин автозапчастин"

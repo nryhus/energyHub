@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import css from "./CarCard.module.css";
-import {ICar} from "@/interfaces/car.interface";
+import {ICar} from "@/interfaces";
 import {Card, Col} from "react-bootstrap";
 
 interface IProps {
@@ -12,8 +12,8 @@ interface IProps {
 
 const CarCard: FC<IProps> = ({car}) => {
     return (
-        <Col md={4}>
-            <Link href={`/cars/${car.id}`} className={css.Link}>
+        <Col>
+            <Link href={`/front/src/app/(main-layout)/cars/${car.id}`} className={css.Link}>
                 <Card className={css.Card}>
                     <button className={css.CompareIcon} title="Порівняти">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">

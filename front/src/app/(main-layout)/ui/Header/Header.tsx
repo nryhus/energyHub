@@ -4,7 +4,7 @@ import Link from "next/link";
 import css from "./Header.module.css";
 import {useState} from "react";
 import {Dropdown} from "./Dropdown"
-import {CategoryEnum} from "@/enums/carCategory.enum";
+import {CategoryEnum} from "@/enums";
 import {Container, Nav, Navbar} from "react-bootstrap";
 
 type MenuType = "available" | "order" | null;
@@ -44,7 +44,7 @@ const Header = () => {
                         </button>
 
                         <Link href={"/merch"} className={css.NavbarLink}>Магазин Автозапчастин</Link>
-                        <Link href={"/"} className={css.NavbarLink}>Кредитування</Link>
+                        <Link href={"/front/public"} className={css.NavbarLink}>Кредитування</Link>
                         <Link href={"/partners"} className={css.NavbarLink}>Для дилерів</Link>
 
                         <button className={css.IconBtn} title="Порівняти">

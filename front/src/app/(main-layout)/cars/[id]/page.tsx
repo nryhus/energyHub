@@ -1,10 +1,10 @@
 'use client';
 
 import { useParams } from "next/navigation";
-import { cars } from "@/data/cars";
 import Image from "next/image";
-import {Breadcrumbs} from "@/app/(main-layout)/components/Breadcrumbs/Breadcrumbs";
-import {CategoryEnum} from "@/enums/carCategory.enum";
+import {cars} from "@/data";
+import {CategoryEnum} from "@/enums";
+import {Breadcrumbs} from "@/app/(main-layout)/ui";
 
 const CarPage = () => {
     const params = useParams<{ id: string }>();
