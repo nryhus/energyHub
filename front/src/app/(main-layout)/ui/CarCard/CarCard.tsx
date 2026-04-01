@@ -13,7 +13,7 @@ interface IProps {
 const CarCard: FC<IProps> = ({car}) => {
     return (
         <Col>
-            <Link href={`/front/src/app/(main-layout)/cars/${car.id}`} className={css.Link}>
+            <Link href={`/cars/${car.id}`} className={css.Link}>
                 <Card className={css.Card}>
                     <button className={css.CompareIcon} title="Порівняти">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">

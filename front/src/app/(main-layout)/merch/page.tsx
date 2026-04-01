@@ -1,6 +1,6 @@
 'use client';
 
-import {Breadcrumbs, MerchCard} from "@/app/(main-layout)/ui";
+import {Breadcrumbs, CardList, MerchCard} from "@/app/(main-layout)/ui";
 import {Row} from "react-bootstrap";
 import {merch} from "@/data/merch";
 
@@ -20,11 +20,9 @@ const MerchPage = () => {
                 {label}
             </h1>
 
-            <Row>
-                {merch.map((m) => (
-                    <MerchCard merch={m} key={m.id}/>
-                ))}
-            </Row>
+            <CardList objects={merch}>
+                {(m) => <MerchCard merch={m} key={m.id}/>}
+            </CardList>
         </div>
     );
 };

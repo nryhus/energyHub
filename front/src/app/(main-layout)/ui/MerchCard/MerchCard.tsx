@@ -11,8 +11,8 @@ interface IProps {
 
 const MerchCard: FC<IProps> = ({merch}) => {
     return (
-        <Col md={4}>
-            <Link href={`/front/src/app/(main-layout)/merch/${merch.id}`} className={css.Link}>
+        <Col>
+            <Link href={`/merch/${merch.id}`} className={css.Link}>
                 <Card className={css.Card}>
                     <div className={css.ImageWrapper}>
                         <Image src={merch.image_url} alt={merch.label} className={css.Image} fill/>
