@@ -3,7 +3,7 @@
 import {useSearchParams} from "next/navigation";
 import {cars} from "@/data";
 import {CategoryEnum} from "@/enums";
-import {Breadcrumbs, CarCard, CardList} from "@/app/(main-layout)/ui";
+import {Breadcrumbs, CarCard, CardList, PaginationBar} from "@/app/(main-layout)/ui";
 
 const ITEMS_PER_PAGE = 9;
 
@@ -23,6 +23,7 @@ const CarsPage = () => {
     const end = start + ITEMS_PER_PAGE;
 
     const paginatedCars = filteredCars.slice(start, end);
+    const countOfPages = Math.ceil(filteredCars.length / ITEMS_PER_PAGE);
 
     const getLabel = () => {
         switch (type) {
@@ -53,6 +54,7 @@ const CarsPage = () => {
             <CardList objects={paginatedCars}>
                 {(car) => <CarCard car={car} key={car.id}/>}
             </CardList>
+            {(countOfPages > 1) && <PaginationBar totalPages={countOfPages}/>}
         </div>
     );
 }

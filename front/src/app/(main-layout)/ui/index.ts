@@ -6,3 +6,4 @@ export * from './Footer';
 export * from './Header';
 export * from './MerchCard';
 export * from './MerchHistory';
+export * from './PaginationBar';
