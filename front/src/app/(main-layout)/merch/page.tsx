@@ -3,6 +3,7 @@
 import {Breadcrumbs, CardList, MerchCard, PaginationBar} from "@/app/(main-layout)/ui";
 import {merch} from "@/data/merch";
 import {useSearchParams} from "next/navigation";
+import {Row} from "react-bootstrap";
 
 const ITEMS_PER_PAGE = 9;
 
@@ -33,11 +34,12 @@ const MerchPage = () => {
                 {label}
             </h1>
 
-            <CardList objects={paginatedMerch}>
-                {(m) => <MerchCard merch={m} key={m.id}/>}
-            </CardList>
-
-            {(countOfPages > 1) && <PaginationBar totalPages={countOfPages}/>}
+            <Row className="d-flex flex-column align-items-center" style={{ background: "#F6F6F6", borderRadius: "36px"}}>
+                <CardList objects={paginatedMerch}>
+                    {(m) => <MerchCard merch={m} key={m.id}/>}
+                </CardList>
+                <PaginationBar totalPages={countOfPages}/>
+            </Row>
         </div>
     );
 };

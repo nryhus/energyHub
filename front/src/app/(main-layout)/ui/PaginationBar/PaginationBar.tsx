@@ -1,6 +1,7 @@
 import {FC} from "react";
 import {useRouter, useSearchParams} from "next/navigation";
 import {Pagination} from "react-bootstrap";
+import css from "./PaginationBar.module.css";
 
 interface IProps {
     totalPages: number;
@@ -8,64 +9,55 @@ interface IProps {
 
 const PaginationBar: FC<IProps> = ({totalPages}) => {
     const router = useRouter();
-    const params = useSearchParams();
+    const searchParams = useSearchParams();
 
-    const currentPage = Number(params.get("page")) || 1;
+    const currentPage = Number(searchParams.get("page")) || 1;
 
     const changePage = (page: number) => {
-        const paramsToSet = new URLSearchParams(params.toString());
-        paramsToSet.set("page", page.toString());
+        const params = new URLSearchParams(searchParams.toString());
+        params.set("page", page.toString());
 
-        router.push(`?${paramsToSet.toString()}`);
+        router.push(`?${params.toString()}`);
     };
 
-    const renderPages = () => {
-        const pages = [];
-
-        for (let i = 1; i <= totalPages; i++) {
-            if (
-                i === 1 ||
-                i === totalPages ||
-                Math.abs(i - currentPage) <= 1
-            ) {
-                pages.push(
-                    <Pagination.Item
-                        key={i}
-                        active={i === currentPage}
-                        onClick={() => changePage(i)}
-                    >
-                        {i}
-                    </Pagination.Item>
-                );
-            } else if (
-                i === currentPage - 2 ||
-                i === currentPage + 2
-            ) {
-                pages.push(<Pagination.Ellipsis key={`ellipsis-${i}`}/>);
-            }
-        }
-
-        return pages;
-    };
+    if (totalPages <= 1) return null;
 
     return (
-        <Pagination className="justify-content-center mt-4">
-            <Pagination.Prev
+        <div className={css.Pagination}>
+            <button
                 disabled={currentPage === 1}
                 onClick={() => changePage(currentPage - 1)}
+                className={css.NavBtn}
             >
-                Previous
-            </Pagination.Prev>
+                ← Previous
+            </button>
 
-            {renderPages()}
+            <div className={css.Pages}>
+                {[...Array(totalPages)].map((_, i) => {
+                    const page = i + 1;
 
-            <Pagination.Next
+                    return (
+                        <button
+                            key={page}
+                            onClick={() => changePage(page)}
+                            className={`${css.Page} ${
+                                page === currentPage ? css.Active : ''
+                            }`}
+                        >
+                            {page}
+                        </button>
+                    );
+                })}
+            </div>
+
+            <button
                 disabled={currentPage === totalPages}
                 onClick={() => changePage(currentPage + 1)}
+                className={css.NavBtn}
             >
-                Next
-            </Pagination.Next>
-        </Pagination>
+                Next →
+            </button>
+        </div>
     );
 };
 

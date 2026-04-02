@@ -4,6 +4,7 @@ import {useSearchParams} from "next/navigation";
 import {cars} from "@/data";
 import {CategoryEnum} from "@/enums";
 import {Breadcrumbs, CarCard, CardList, PaginationBar} from "@/app/(main-layout)/ui";
+import {Row} from "react-bootstrap";
 
 const ITEMS_PER_PAGE = 9;
 
@@ -51,10 +52,13 @@ const CarsPage = () => {
                 {label}
             </h1>
 
-            <CardList objects={paginatedCars}>
-                {(car) => <CarCard car={car} key={car.id}/>}
-            </CardList>
-            {(countOfPages > 1) && <PaginationBar totalPages={countOfPages}/>}
+            <Row className="d-flex flex-column align-items-center" style={{ background: "#F6F6F6", borderRadius: "36px"}}>
+                <CardList objects={paginatedCars}>
+                    {(car) => <CarCard car={car} key={car.id}/>}
+                </CardList>
+
+                <PaginationBar totalPages={countOfPages}/>
+            </Row>
         </div>
     );
 }

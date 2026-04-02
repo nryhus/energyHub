@@ -1,0 +1,50 @@
+.Pagination {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+
+    color: #18181B;
+    font-size: 16px;
+}
+
+.NavBtn {
+    background: none;
+    border: none;
+    color: #18181B;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.NavBtn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.Pages {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Page {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: #18181B;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.Page:hover {
+    background: #f4f4f5;
+}
+
+.Active {
+    background: #F4F4F5;
+    font-weight: 600;
+}
