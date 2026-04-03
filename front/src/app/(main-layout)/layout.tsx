@@ -1,16 +1,28 @@
-import {FC, PropsWithChildren} from "react";
+import {CSSProperties, FC, PropsWithChildren} from "react";
 
 import {Header} from "@/app/(main-layout)/ui/Header/Header";
 import {Footer} from "@/app/(main-layout)/ui/Footer/Footer";
-import {Container} from "react-bootstrap";
 
 const Layout: FC<PropsWithChildren> = ({children}) => {
+    const MainStyles = {
+        position: "relative",
+        zIndex: 2,
+
+        background: "#fff",
+        borderBottomRightRadius: 56,
+        borderBottomLeftRadius: 56,
+
+        marginBottom: -60,
+        paddingBottom: 60,
+    }
+
+
     return (
         <div>
             <Header/>
-            <Container>
+            <div style={MainStyles as CSSProperties}>
                 {children}
-            </Container>
+            </div>
             <Footer/>
         </div>
     );

@@ -4,7 +4,7 @@ import {useSearchParams} from "next/navigation";
 import {cars} from "@/data";
 import {CategoryEnum} from "@/enums";
 import {Breadcrumbs, CarCard, CardList, PaginationBar} from "@/app/(main-layout)/ui";
-import {Row} from "react-bootstrap";
+import {Container, Row} from "react-bootstrap";
 
 const ITEMS_PER_PAGE = 9;
 
@@ -40,7 +40,7 @@ const CarsPage = () => {
     const label = getLabel();
 
     return (
-        <div className="p-6">
+        <Container className="p-6">
             <Breadcrumbs
                 breadcrumbs={[
                     {label: "Головна", href: "/"},
@@ -59,7 +59,7 @@ const CarsPage = () => {
 
                 <PaginationBar totalPages={countOfPages}/>
             </Row>
-        </div>
+        </Container>
     );
 }
 

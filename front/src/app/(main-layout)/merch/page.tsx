@@ -3,7 +3,7 @@
 import {Breadcrumbs, CardList, MerchCard, PaginationBar} from "@/app/(main-layout)/ui";
 import {merch} from "@/data/merch";
 import {useSearchParams} from "next/navigation";
-import {Row} from "react-bootstrap";
+import {Container, Row} from "react-bootstrap";
 
 const ITEMS_PER_PAGE = 9;
 
@@ -22,7 +22,7 @@ const MerchPage = () => {
     const countOfPages = Math.ceil(merch.length / ITEMS_PER_PAGE);
 
     return (
-        <div className="p-6">
+        <Container className="p-6">
             <Breadcrumbs
                 breadcrumbs={[
                     {label: "Головна", href: "/"},
@@ -40,7 +40,7 @@ const MerchPage = () => {
                 </CardList>
                 <PaginationBar totalPages={countOfPages}/>
             </Row>
-        </div>
+        </Container>
     );
 };
 
