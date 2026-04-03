@@ -5,6 +5,7 @@ import Image from "next/image";
 import {cars} from "@/data";
 import {CategoryEnum} from "@/enums";
 import {Breadcrumbs} from "@/app/(main-layout)/ui";
+import {Container} from "react-bootstrap";
 
 const CarPage = () => {
     const params = useParams<{ id: string }>();
@@ -27,7 +28,7 @@ const CarPage = () => {
     const label = getLabel();
 
     return (
-        <div>
+        <Container>
             <Breadcrumbs
                 breadcrumbs={[
                     { label: "Головна", href: "/" },
@@ -52,7 +53,7 @@ const CarPage = () => {
                     <p>Ціна: ${car.price}</p>
                 </div>
             </div>
-        </div>
+        </Container>
     );
 };
 

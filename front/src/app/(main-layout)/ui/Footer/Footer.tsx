@@ -10,40 +10,40 @@ const Footer = () => {
                     <Col md={3}>
                         <h5>Категорії</h5>
                         <ul>
-                            <li><Link href={"/front/public"}>Авто з Європи</Link></li>
-                            <li><Link href={"/front/public"}>Авто з США</Link></li>
-                            <li><Link href={"/front/public"}>Авто з Китаю</Link></li>
-                            <li><Link href={"/front/public"}>Популярні категорії</Link></li>
+                            <li><Link href={"/"}>Авто з Європи</Link></li>
+                            <li><Link href={"/"}>Авто з США</Link></li>
+                            <li><Link href={"/"}>Авто з Китаю</Link></li>
+                            <li><Link href={"/"}>Популярні категорії</Link></li>
                         </ul>
                     </Col>
                     <Col md={3}>
                         <h5>Категорії</h5>
                         <ul>
-                            <li><Link href={"/front/public"}>Седани</Link></li>
-                            <li><Link href={"/front/public"}>Кросовери</Link></li>
-                            <li><Link href={"/front/public"}>Преміум-клас</Link></li>
-                            <li><Link href={"/front/public"}>Нові</Link></li>
-                            <li><Link href={"/front/public"}>З пробігом</Link></li>
-                            <li><Link href={"/front/public"}>На складі</Link></li>
-                            <li><Link href={"/front/public"}>У дорозі</Link></li>
+                            <li><Link href={"/"}>Седани</Link></li>
+                            <li><Link href={"/"}>Кросовери</Link></li>
+                            <li><Link href={"/"}>Преміум-клас</Link></li>
+                            <li><Link href={"/"}>Нові</Link></li>
+                            <li><Link href={"/"}>З пробігом</Link></li>
+                            <li><Link href={"/"}>На складі</Link></li>
+                            <li><Link href={"/"}>У дорозі</Link></li>
                         </ul>
                     </Col>
                     <Col md={3}>
                         <h5>Сторінки</h5>
                         <ul>
-                            <li><Link href={"/front/public"}>Контакти</Link></li>
-                            <li><Link href={"/front/public"}>Про нас</Link></li>
-                            <li><Link href={"/front/public"}>Питання та відповіді</Link></li>
-                            <li><Link href={"/front/public"}>Блог</Link></li>
+                            <li><Link href={"/"}>Контакти</Link></li>
+                            <li><Link href={"/"}>Про нас</Link></li>
+                            <li><Link href={"/"}>Питання та відповіді</Link></li>
+                            <li><Link href={"/"}>Блог</Link></li>
                         </ul>
                     </Col>
                     <Col md={3}>
                         <h5>Інформація</h5>
                         <ul>
-                            <li><Link href={"/front/public"}>Контакти</Link></li>
-                            <li><Link href={"/front/public"}>Зворотній звʼязок / Замовити авто</Link></li>
-                            <li><Link href={"/front/public"}>Підтримка клієнтів</Link></li>
-                            <li><Link href={"/front/public"}>Адреса</Link></li>
+                            <li><Link href={"/"}>Контакти</Link></li>
+                            <li><Link href={"/"}>Зворотній звʼязок / Замовити авто</Link></li>
+                            <li><Link href={"/"}>Підтримка клієнтів</Link></li>
+                            <li><Link href={"/"}>Адреса</Link></li>
                         </ul>
 
                         <div className={css.Socials}>

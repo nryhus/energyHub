@@ -1,8 +1,10 @@
+import {Container} from "react-bootstrap";
+
 const MerchPage = () => {
     return (
-        <div>
+        <Container>
             MerchPage
-        </div>
+        </Container>
     );
 };
 

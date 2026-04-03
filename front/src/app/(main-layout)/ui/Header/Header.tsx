@@ -6,11 +6,13 @@ import {useState} from "react";
 import {Dropdown} from "./Dropdown"
 import {CategoryEnum} from "@/enums";
 import {Container, Nav, Navbar} from "react-bootstrap";
+import {LoginModal} from "@/app/(main-layout)/ui";
 
 type MenuType = "available" | "order" | null;
 
 const Header = () => {
     const [activeMenu, setActiveMenu] = useState<MenuType>(null);
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
 
     const toggleMenu = (menu: MenuType) => {
         setActiveMenu(prev => (prev === menu ? null : menu));
@@ -44,7 +46,7 @@ const Header = () => {
                         </button>
 
                         <Link href={"/merch"} className={css.NavbarLink}>Магазин Автозапчастин</Link>
-                        <Link href={"/front/public"} className={css.NavbarLink}>Кредитування</Link>
+                        <Link href={"/"} className={css.NavbarLink}>Кредитування</Link>
                         <Link href={"/partners"} className={css.NavbarLink}>Для дилерів</Link>
 
                         <button className={css.IconBtn} title="Порівняти">
@@ -54,7 +56,7 @@ const Header = () => {
                             </svg>
                         </button>
 
-                        <button className={css.IconBtn} title="Особистий кабінет">
+                        <button onClick={() => setIsLoginOpen(true)} className={css.IconBtn} title="Особистий кабінет">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none">
                                 <circle cx="12" cy="7" r="3" stroke="#333333" strokeWidth="2" strokeLinecap="round"
@@ -110,6 +112,11 @@ const Header = () => {
                     </div>
                 )}
             </Dropdown>
+
+            <LoginModal
+                isOpen={isLoginOpen}
+                onClose={() => setIsLoginOpen(false)}
+            />
         </div>
     );
 };

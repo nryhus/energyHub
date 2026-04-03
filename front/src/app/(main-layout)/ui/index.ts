@@ -4,6 +4,7 @@ export * from './CardList';
 export * from './CarHistory';
 export * from './Footer';
 export * from './Header';
+export * from './LoginModal';
 export * from './MerchCard';
 export * from './MerchHistory';
 export * from './PaginationBar';

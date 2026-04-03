@@ -1,0 +1,96 @@
+.Overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.Modal {
+    width: 420px;
+    background: #FFFFFF;
+    border-radius: 48px;
+    padding: 28px;
+    position: relative;
+
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.Subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #6B7280;
+}
+
+.Input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+    border: 1px solid #E4E4E7;
+    background: white;
+}
+
+.Row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 20px;
+}
+
+.Checkbox {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.Forgot {
+    background: none;
+    border: none;
+    color: #64748B;
+    cursor: pointer;
+}
+
+.Submit {
+    width: 100%;
+    padding: 14px;
+    border-radius: 30px;
+    background: #FF5014;
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.Footer {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.Footer span {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #64748B;
+}
