@@ -6,9 +6,20 @@ import {useState} from "react";
 import {Dropdown} from "./Dropdown"
 import {CategoryEnum} from "@/enums";
 import {Container, Nav, Navbar} from "react-bootstrap";
-import {LoginModal} from "@/app/(main-layout)/ui";
+import {LoginModal} from "@/app/ui";
 
 type MenuType = "available" | "order" | null;
+
+const menuConfig = {
+    available: {
+        title: "АВТО В НАЯВНОСТІ",
+        type: CategoryEnum.inStorage,
+    },
+    order: {
+        title: "ПІД ЗАМОВЛЕННЯ",
+        type: CategoryEnum.toOrder,
+    },
+};
 
 const Header = () => {
     const [activeMenu, setActiveMenu] = useState<MenuType>(null);
@@ -80,58 +91,32 @@ const Header = () => {
             </Navbar>
 
             <Dropdown isOpen={!!activeMenu} onClose={() => setActiveMenu(null)}>
-                {activeMenu === "available" && (
+                {activeMenu && (
                     <div className={css.MenuContent}>
                         <div>
-                            <p>АВТО В НАЯВНОСТІ</p>
+                            <p>{menuConfig[activeMenu].title}</p>
+
                             <p onClick={() => setActiveMenu(null)}>МАШИНИ З КИТАЮ</p>
                             <p onClick={() => setActiveMenu(null)}>МАШИНИ З ЄВРОПИ</p>
                             <p onClick={() => setActiveMenu(null)}>МАШИНИ З США</p>
                         </div>
 
-                        <div className={css.ButtonGroup}>
-                            <Link href={`/cars?type=${CategoryEnum.toOrder}`} className={css.MainButton}>
+                        <div className={css.ButtonGroup} onClick={() => setActiveMenu(null)}>
+                            <Link
+                                href={`/cars?type=${menuConfig[activeMenu].type}`}
+                                className={css.MainButton}
+                            >
                                 Дивитись весь каталог
                             </Link>
 
-                            <Link href={`/cars?type=${CategoryEnum.toOrder}`} className={css.IconButton}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
-                                     fill="none">
-                                    <path d="M16.3891 8.11096L8.61091 15.8891" stroke="#fff" strokeWidth="2"
-                                          strokeLinecap="round" strokeLinejoin="round"/>
-                                    <path d="M16.3891 8.11096L16.7426 12" stroke="#fff" strokeWidth="2"
-                                          strokeLinecap="round" strokeLinejoin="round"/>
-                                    <path d="M16.3891 8.11096L12.5 7.75741" stroke="#fff" strokeWidth="2"
-                                          strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
-                            </Link>
-                        </div>
-                    </div>
-                )}
-
-                {activeMenu === "order" && (
-                    <div className={css.MenuContent}>
-                        <div>
-                            <p>ПІД ЗАМОВЛЕННЯ</p>
-                            <p onClick={() => setActiveMenu(null)}>МАШИНИ З КИТАЮ</p>
-                            <p onClick={() => setActiveMenu(null)}>МАШИНИ З ЄВРОПИ</p>
-                            <p onClick={() => setActiveMenu(null)}>МАШИНИ З США</p>
-                        </div>
-
-                        <div className={css.ButtonGroup}>
-                            <Link href={`/cars?type=${CategoryEnum.toOrder}`} className={css.MainButton}>
-                                Дивитись весь каталог
-                            </Link>
-
-                            <Link href={`/cars?type=${CategoryEnum.toOrder}`} className={css.IconButton}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
-                                     fill="none">
-                                    <path d="M16.3891 8.11096L8.61091 15.8891" stroke="#fff" strokeWidth="2"
-                                          strokeLinecap="round" strokeLinejoin="round"/>
-                                    <path d="M16.3891 8.11096L16.7426 12" stroke="#fff" strokeWidth="2"
-                                          strokeLinecap="round" strokeLinejoin="round"/>
-                                    <path d="M16.3891 8.11096L12.5 7.75741" stroke="#fff" strokeWidth="2"
-                                          strokeLinecap="round" strokeLinejoin="round"/>
+                            <Link
+                                href={`/cars?type=${menuConfig[activeMenu].type}`}
+                                className={css.IconButton}
+                            >
+                                <svg width="20" height="20" viewBox="0 0 20 20">
+                                    <path d="M16.3891 8.11096L8.61091 15.8891" stroke="#fff" strokeWidth="2"/>
+                                    <path d="M16.3891 8.11096L16.7426 12" stroke="#fff" strokeWidth="2"/>
+                                    <path d="M16.3891 8.11096L12.5 7.75741" stroke="#fff" strokeWidth="2"/>
                                 </svg>
                             </Link>
                         </div>

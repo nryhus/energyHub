@@ -3,7 +3,7 @@
 import {useSearchParams} from "next/navigation";
 import {cars} from "@/data";
 import {CategoryEnum} from "@/enums";
-import {Breadcrumbs, CarCard, CardList, PaginationBar, SearchInput} from "@/app/(main-layout)/ui";
+import {Breadcrumbs, CarCard, CardList, PaginationBar, SearchInput} from "@/app/ui";
 import {Container, Row} from "react-bootstrap";
 
 const ITEMS_PER_PAGE = 9;

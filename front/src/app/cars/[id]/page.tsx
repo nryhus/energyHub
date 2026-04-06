@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import {cars} from "@/data";
 import {CategoryEnum} from "@/enums";
-import {Breadcrumbs} from "@/app/(main-layout)/ui";
+import {Breadcrumbs} from "@/app/ui";
 import {Container} from "react-bootstrap";
 
 const CarPage = () => {

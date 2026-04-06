@@ -1,6 +1,6 @@
 'use client';
 
-import {Breadcrumbs, CardList, MerchCard, PaginationBar} from "@/app/(main-layout)/ui";
+import {Breadcrumbs, CardList, MerchCard, PaginationBar} from "@/app/ui";
 import {merch} from "@/data/merch";
 import {useSearchParams} from "next/navigation";
 import {Container, Row} from "react-bootstrap";

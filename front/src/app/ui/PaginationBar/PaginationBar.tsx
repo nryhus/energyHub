@@ -1,6 +1,7 @@
+'use client';
+
 import {FC} from "react";
 import {useRouter, useSearchParams} from "next/navigation";
-import {Pagination} from "react-bootstrap";
 import css from "./PaginationBar.module.css";
 
 interface IProps {
