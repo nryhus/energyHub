@@ -89,10 +89,23 @@ const Header = () => {
                             <p onClick={() => setActiveMenu(null)}>МАШИНИ З США</p>
                         </div>
 
-                        <Link href={`/cars?type=${CategoryEnum.inStorage}`}
-                              onClick={() => setActiveMenu(null)} className={css.CatalogBtn}>
-                            Дивитись весь каталог →
-                        </Link>
+                        <div className={css.ButtonGroup}>
+                            <Link href={`/cars?type=${CategoryEnum.toOrder}`} className={css.MainButton}>
+                                Дивитись весь каталог
+                            </Link>
+
+                            <Link href={`/cars?type=${CategoryEnum.toOrder}`} className={css.IconButton}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                     fill="none">
+                                    <path d="M16.3891 8.11096L8.61091 15.8891" stroke="#fff" strokeWidth="2"
+                                          strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M16.3891 8.11096L16.7426 12" stroke="#fff" strokeWidth="2"
+                                          strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M16.3891 8.11096L12.5 7.75741" stroke="#fff" strokeWidth="2"
+                                          strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                            </Link>
+                        </div>
                     </div>
                 )}
 
@@ -105,10 +118,23 @@ const Header = () => {
                             <p onClick={() => setActiveMenu(null)}>МАШИНИ З США</p>
                         </div>
 
-                        <Link href={`/cars?type=${CategoryEnum.toOrder}`}
-                              onClick={() => setActiveMenu(null)} className={css.CatalogBtn}>
-                            Дивитись весь каталог →
-                        </Link>
+                        <div className={css.ButtonGroup}>
+                            <Link href={`/cars?type=${CategoryEnum.toOrder}`} className={css.MainButton}>
+                                Дивитись весь каталог
+                            </Link>
+
+                            <Link href={`/cars?type=${CategoryEnum.toOrder}`} className={css.IconButton}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                     fill="none">
+                                    <path d="M16.3891 8.11096L8.61091 15.8891" stroke="#fff" strokeWidth="2"
+                                          strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M16.3891 8.11096L16.7426 12" stroke="#fff" strokeWidth="2"
+                                          strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M16.3891 8.11096L12.5 7.75741" stroke="#fff" strokeWidth="2"
+                                          strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                            </Link>
+                        </div>
                     </div>
                 )}
             </Dropdown>

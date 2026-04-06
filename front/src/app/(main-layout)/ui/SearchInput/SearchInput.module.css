@@ -1,0 +1,29 @@
+.SearchWrapper {
+    position: relative;
+    width: 300px;
+}
+
+.SearchInput {
+    width: 100%;
+    padding: 12px 24px 12px 30px;
+    border-radius: 30px;
+    border: 1px solid #D5D5D5;
+    background: #F9FAFB;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #212D3C;
+}
+
+.SearchInput::placeholder {
+    color: #9CA3AF;
+}
+
+.SearchIcon {
+    position: absolute;
+    left: 12px;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+}

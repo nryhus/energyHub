@@ -3,7 +3,7 @@
 import {useSearchParams} from "next/navigation";
 import {cars} from "@/data";
 import {CategoryEnum} from "@/enums";
-import {Breadcrumbs, CarCard, CardList, PaginationBar} from "@/app/(main-layout)/ui";
+import {Breadcrumbs, CarCard, CardList, PaginationBar, SearchInput} from "@/app/(main-layout)/ui";
 import {Container, Row} from "react-bootstrap";
 
 const ITEMS_PER_PAGE = 9;
@@ -13,11 +13,15 @@ const CarsPage = () => {
 
     const type = searchParams.get("type") as CategoryEnum || null;
     const page = Number(searchParams.get("page")) || 1;
+    const search = searchParams.get("search")?.toLowerCase() || "";
 
     const filteredCars = cars.filter((car) => {
-        if (!type) return true;
+        const matchType = !type || car.carCategory === type;
 
-        return car.carCategory === type;
+        const matchSearch =
+            car.label.toLowerCase().includes(search);
+
+        return matchType && matchSearch;
     });
 
     const start = (page - 1) * ITEMS_PER_PAGE;
@@ -40,7 +44,7 @@ const CarsPage = () => {
     const label = getLabel();
 
     return (
-        <Container className="p-6">
+        <Container>
             <Breadcrumbs
                 breadcrumbs={[
                     {label: "Головна", href: "/"},
@@ -48,9 +52,13 @@ const CarsPage = () => {
                 ]}
             />
 
-            <h1 className="text-2xl font-bold mb-6">
-                {label}
-            </h1>
+            <div className="d-flex justify-content-between mb-3">
+                <h1 style={{color: "#212D3C", fontSize: "44px", fontWeight: 300}}>
+                    {label}
+                </h1>
+
+                <SearchInput/>
+            </div>
 
             <Row className="d-flex flex-column align-items-center" style={{ background: "#F6F6F6", borderRadius: "36px"}}>
                 <CardList objects={paginatedCars}>

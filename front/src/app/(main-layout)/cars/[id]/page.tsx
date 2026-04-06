@@ -36,7 +36,7 @@ const CarPage = () => {
                     { label: car.label, href: `/cars/${car.id}`, active: true },
                 ]}
             />
-            <div className="p-6 bg-cyan-300">
+            <div>
                 <h1 className="text-3xl font-bold">{car.label}</h1>
 
                 <Image
@@ -47,7 +47,7 @@ const CarPage = () => {
                     loading="eager"
                 />
 
-                <div className="mt-6 space-y-2">
+                <div className="mt-3 space-y-2">
                     <p>Рік: {car.year}</p>
                     <p>Країна: {car.country}</p>
                     <p>Ціна: ${car.price}</p>

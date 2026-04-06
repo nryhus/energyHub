@@ -10,6 +10,7 @@
     justify-content: space-between;
     border-radius: 36px;
     background: #F6F6F6;
+    color: #212D3C;
     border: none;
     height: 540px;
     overflow: hidden;
@@ -62,8 +63,8 @@
 }
 
 .Title {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: 500;
 }
 
 .Tags {
@@ -76,7 +77,8 @@
     background: #e0e0e0;
     padding: 4px 10px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .Status {
@@ -91,32 +93,78 @@
 }
 
 .Specs p {
-    font-size: 10px;
-    color: #999;
+    font-size: 12px;
+    font-weight: 700;
+    color: #9C9E9B;
 }
 
 .Specs span {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 400;
 }
 
-.ButtonWrapper {
+.ButtonTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background: #212D3C;
+    color: white;
+    border: none;
+}
+
+.ButtonIcon {
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+    background: #212D3C;
+    color: white;
+    border: none;
+}
+
+.ButtonGroup {
+    display: flex;
+    align-items: center;
     margin-top: 16px;
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.3s ease;
 }
 
-.Card:hover .ButtonWrapper {
+.Card:hover .ButtonGroup {
     opacity: 1;
     transform: translateY(0);
 }
 
-.Button {
-    width: 100%;
-    padding: 12px;
-    border-radius: 30px;
+.MainButton {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 44px;
+
+    border-radius: 999px;
+
     background: #212D3C;
-    color: white;
-    border: none;
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: none;
+}
+
+.IconButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+    background: #212D3C;
+
+    text-decoration: none;
 }

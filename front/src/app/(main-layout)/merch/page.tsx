@@ -22,7 +22,7 @@ const MerchPage = () => {
     const countOfPages = Math.ceil(merch.length / ITEMS_PER_PAGE);
 
     return (
-        <Container className="p-6">
+        <Container>
             <Breadcrumbs
                 breadcrumbs={[
                     {label: "Головна", href: "/"},
@@ -30,7 +30,7 @@ const MerchPage = () => {
                 ]}
             />
 
-            <h1 className="text-2xl font-bold mb-6">
+            <h1 className="text-2xl font-bold mb-3" style={{color: "#212D3C", fontSize: "44px", fontWeight: 300}}>
                 {label}
             </h1>
 
